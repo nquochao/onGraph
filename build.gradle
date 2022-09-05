@@ -1,0 +1,42 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '1.2.1'
+String projectname='OliviaProjectChessBoard'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+// https://mvnrepository.com/artifact/org.jgrapht/jgrapht-core
+implementation("org.jgrapht:jgrapht-core:1.5.1")
+   implementation group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
+    implementation group: 'ch.qos.logback', name:'logback-classic', version: '1.2.3'
+    implementation group: 'ch.qos.logback', name:'logback-core', version: '1.2.3'
+ 
+implementation group: 'org.jgrapht', name: 'jgrapht-io', version: '1.4.0'
+implementation ( files("lib/jgraphx.jar"))
+    testImplementation ( 
+              'junit:junit:4+', 
+    	      'org.dbunit:dbunit:2.5.0',
+  	          'org.mockito:mockito-all:1.9.5',
+              'org.springframework:spring-test:4.3.4.RELEASE',
+      	      'com.github.springtestdbunit:spring-test-dbunit:1.0.1',
+		      'javax.transaction:jta:1.1'
+			  
+    )
+	}
+// Include dependent libraries in archive.
+
+jar {
+  manifest { 
+    attributes "Main-Class": "oliviaproject."+projectname
+  }  
+
+
+}
+
+  
+
+ 

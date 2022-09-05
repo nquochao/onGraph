@@ -1,0 +1,10 @@
+/bin/
+/logs/
+/.settings
+/.gradle
+/.project
+/.classpath
+/build/
+/dependencies/
+**/deployLocalConfig.properties
+**/deployLocalConfig.properties.*
